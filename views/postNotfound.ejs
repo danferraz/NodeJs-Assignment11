@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= Department %> | Department</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/EmpStyle.css">    
+    <link rel="icon" href="/images/emp1.png" type="image/gif" sizes="12x12">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/header') %>
+            <div class="jumbotron jumbotronPost">
+                <h2>
+                    <%= Name %>
+                </h2>
+                <hr>
+                <%- include('partials/navbar') %>
+            </div>
+    </div>
+</body>
+
+</html>

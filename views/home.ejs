@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Population</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/EmpStyle.css">
+    <link rel="icon" href="images/population.png" type="image/gif" sizes="12x12">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/header') %>
+            <div class="">
+
+                <div class="jumbotronHomeButton">
+                    <button onclick="SortByPopulationCity();" class="btn btn-rounded">Sort by population in descending Order</button>
+                    <button onclick="SortByCity();" class="btn btn-rounded">Sort by city name</button>
+                    <button onclick="GetAvgPopulation();" class="btnn btn-rounded">Average of the population</button>
+                    <button onclick="GetTheLowestPopulation();" class="btn btn-rounded">Lowest population</button>
+                </div>
+                <div class="jumbotronHomeData">
+                    <div class="col-sm-6">
+                        <div id="cityData" class="cityData">
+                            <table id="table" class="table table-borderless">
+                                <thead>
+                                    <tr class="rowData">
+                                        <th class="thRow" scope="col">#</th>
+                                        <th class="thRow" scope="col">City</th>
+                                        <th class="thRow" scope="col">Population</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <td></td>
+                                    <!-- loop over pupulation details and render them -->
+                                    <% CITYPOPULATIONDATA.forEach((CITYPOPULATIONDATA) => { console.log("City: " + CITYPOPULATIONDATA.City + " Name: " +CITYPOPULATIONDATA.Population); %>
+                                        <tr class="Data">
+                                            <th class="thRowDataID th" scope="row">
+                                                <%= CITYPOPULATIONDATA.rowid %>
+                                            </th>
+                                            <td class="thRowDataName th" id="cityName">
+                                                <%= CITYPOPULATIONDATA.City %>
+                                            </td>
+                                            <td class="thRowDataPopulation th" id="populationValue">
+                                                <%= CITYPOPULATIONDATA.Population %>
+                                            </td>
+                                            <% }) %>
+                                        </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultDiv" class="cardData" style="width: 25rem;">
+                <div class="">
+                    <p class="text">Average and Lowest Population detail</p>
+                    <div class="cardDataText">
+                        <p id="result"></p>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
